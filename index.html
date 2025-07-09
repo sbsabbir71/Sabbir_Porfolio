@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MD. Sabbir Hossain - System/Network Engineer</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <!-- AOS (Animate On Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --text-color: #333;
+            --text-light: #7f8c8d;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.7;
+            color: var(--text-color);
+            overflow-x: hidden;
+        }
+        
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 150px 0 100px;
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80') no-repeat center center/cover;
+            opacity: 0.1;
+            z-index: 0;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .profile-img {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            border: 5px solid rgba(255,255,255,0.2);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            transition: all 0.5s ease;
+        }
+        
+        .profile-img:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        /* Floating animation */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0px); }
+        }
+        
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        /* Section Styling */
+        .section {
+            padding: 100px 0;
+            position: relative;
+        }
+        
+        .section-title {
+            position: relative;
+            margin-bottom: 50px;
+            color: var(--dark-color);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--secondary-color);
+            border-radius: 2px;
+        }
+        
+        .section-title.center {
+            text-align: center;
+        }
+        
+        /* Card Hover Effect */
+        .card-hover {
+            transition: all 0.3s ease;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .card-hover:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+        
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding-left: 30px;
+        }
+        
+        .timeline:before {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(to bottom, var(--secondary-color), var(--accent-color));
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 40px;
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .timeline-item:hover {
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-item:before {
+            content: '';
+            position: absolute;
+            left: -38px;
+            top: 30px;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--secondary-color);
+            border: 4px solid white;
+            box-shadow: 0 0 0 3px var(--secondary-color);
+        }
+        
+        /* Skills */
+        .skill-item {
+            margin-bottom: 25px;
+        }
+        
+        .skill-name {
+            margin-bottom: 8px;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+        }
+        
+        .progress {
+            height: 10px;
+            border-radius: 5px;
+            background: #f1f1f1;
+            overflow: visible;
+        }
+        
+        .progress-bar {
+            position: relative;
+            border-radius: 5px;
+            background: linear-gradient(to right, var(--secondary-color), var(--accent-color));
+            transition: width 1.5s ease;
+        }
+        
+        .progress-bar:after {
+            content: attr(data-skill-level);
+            position: absolute;
+            right: -25px;
+            top: -30px;
+            background: var(--dark-color);
+            color: white;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: bold;
+        }
+        
+        .progress-bar:before {
+            content: '';
+            position: absolute;
+            right: -8px;
+            top: -10px;
+            width: 0;
+            height: 0;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: 10px solid var(--dark-color);
+        }
+        
+        /* Contact Form */
+        .form-control {
+            height: 50px;
+            border-radius: 8px;
+            border: 1px solid #ddd;
+            padding-left: 20px;
+            transition: all 0.3s;
+        }
+        
+        .form-control:focus {
+            box-shadow: none;
+            border-color: var(--secondary-color);
+        }
+        
+        textarea.form-control {
+            height: auto;
+            padding-top: 15px;
+        }
+        
+        /* Button Styles */
+        .btn-custom {
+            background: linear-gradient(to right, var(--secondary-color), var(--accent-color));
+            border: none;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(52, 152, 219, 0.3);
+        }
+        
+        .btn-custom:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.4);
+            color: white;
+        }
+        
+        .btn-outline-custom {
+            border: 2px solid var(--secondary-color);
+            color: var(--secondary-color);
+            background: transparent;
+            padding: 10px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        
+        .btn-outline-custom:hover {
+            background: var(--secondary-color);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(52, 152, 219, 0.3);
+        }
+        
+        /* Navigation */
+        .navbar {
+            padding: 15px 0;
+            transition: all 0.3s;
+            background: rgba(44, 62, 80, 0.9) !important;
+            backdrop-filter: blur(10px);
+        }
+        
+        .navbar.scrolled {
+            padding: 10px 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+        
+        .nav-link {
+            color: white !important;
+            font-weight: 500;
+            padding: 8px 15px !important;
+            margin: 0 5px;
+            position: relative;
+        }
+        
+        .nav-link:before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 2px;
+            background: var(--secondary-color);
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover:before,
+        .nav-link.active:before {
+            width: 100%;
+        }
+        
+        /* Social Icons */
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: var(--secondary-color);
+            color: white;
+            border-radius: 50%;
+            margin: 0 8px;
+            font-size: 18px;
+            transition: all 0.3s;
+        }
+        
+        .social-icons a:hover {
+            background: var(--accent-color);
+            transform: translateY(-5px) rotate(10deg);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 30px 0;
+            position: relative;
+        }
+        
+        footer:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(to right, var(--secondary-color), var(--accent-color));
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: var(--secondary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            z-index: 99;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background: var(--accent-color);
+            transform: translateY(-5px);
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .hero-section {
+                padding: 120px 0 80px;
+                text-align: center;
+            }
+            
+            .profile-img {
+                width: 180px;
+                height: 180px;
+                margin: 0 auto 20px;
+            }
+            
+            .section {
+                padding: 70px 0;
+            }
+            
+            .timeline:before {
+                left: 15px;
+            }
+            
+            .timeline-item {
+                padding: 20px;
+                margin-left: 20px;
+            }
+            
+            .timeline-item:before {
+                left: -28px;
+                top: 25px;
+            }
+        }
+        
+        /* Particle JS Background */
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+        
+        /* Glow Effect */
+        .glow {
+            text-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+        }
+        
+        /* Pulse Animation */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+    </style>
+</head>
+<body data-bs-spy="scroll" data-bs-target="#navbar-example">
+    <!-- Navigation -->
+    <nav id="navbar-example" class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <span class="glow">Sabbir Hossain</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experience">Experience</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#education">Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div id="particles-js"></div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 hero-content">
+                    <h1 class="display-3 fw-bold mb-4 animate__animated animate__fadeInDown">MD. Sabbir Hossain</h1>
+                    <p class="lead mb-4 animate__animated animate__fadeIn animate__delay-1s">System/Network Engineer | Linux Administrator | IT Specialist</p>
+                    <div class="d-flex gap-3 animate__animated animate__fadeIn animate__delay-2s">
+                        <a href="#contact" class="btn btn-custom pulse">Contact Me</a>
+                        <a href="#experience" class="btn btn-outline-custom">My Experience</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 animate__animated animate__fadeIn animate__delay-1s">
+                    <div class="text-center floating">
+                        <img src="./SABBIR_HOSSAIN.jpeg" class="profile-img">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title center" data-aos="fade-up">About Me</h2>
+            <div class="row">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <p class="lead">I am a committed and motivated IT professional seeking responsibilities and opportunities where I can apply my academic background, skills, and interests to develop and advance my career.</p>
+                    <p>With extensive experience in network engineering, system administration, and technical support, I bring a comprehensive skill set to any IT environment. My expertise includes MikroTik and Cisco router configuration, Linux system administration, network security, and various IT infrastructure solutions.</p>
+                    <div class="mt-4">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="flex-shrink-0 bg-primary bg-opacity-10 p-3 rounded me-3">
+                                <i class="fas fa-bullseye text-primary fs-4"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-0">Mission</h5>
+                                <p class="mb-0 text-muted">To deliver exceptional IT solutions with security and efficiency</p>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center">
+                            <div class="flex-shrink-0 bg-primary bg-opacity-10 p-3 rounded me-3">
+                                <i class="fas fa-eye text-primary fs-4"></i>
+                            </div>
+                            <div>
+                                <h5 class="mb-0">Vision</h5>
+                                <p class="mb-0 text-muted">To become a leading expert in network infrastructure and security</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="card card-hover">
+                        <div class="card-body">
+                            <h5 class="card-title">Personal Details</h5>
+                            <ul class="list-unstyled">
+                                <li class="mb-3">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-envelope me-3 text-primary"></i>
+                                        <span>hbsabbir9@gmail.com</span>
+                                    </div>
+                                </li>
+                                <li class="mb-3">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-phone me-3 text-primary"></i>
+                                        <span>+88 01748730955</span>
+                                    </div>
+                                </li>
+                                <li class="mb-3">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-map-marker-alt me-3 text-primary"></i>
+                                        <span>Uttar Badda, Link Road, Dhaka</span>
+                                    </div>
+                                </li>
+                                <li class="mb-3">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-calendar-alt me-3 text-primary"></i>
+                                        <span>10th September 2000</span>
+                                    </div>
+                                </li>
+                                <li class="mb-3">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-flag me-3 text-primary"></i>
+                                        <span>Bangladeshi</span>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="mt-4">
+                                <a href="https://www.linkedin.com/in/sabbir-hossain-68b315215" class="btn btn-outline-primary me-2" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                                <a href="mailto:hbsabbir9@gmail.com" class="btn btn-outline-secondary"><i class="fas fa-envelope"></i> Email</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title center" data-aos="fade-up">Professional Experience</h2>
+            <div class="row">
+                <div class="col-lg-10 mx-auto">
+                    <div class="timeline">
+                        <!-- Current Job -->
+                        <div class="timeline-item" data-aos="fade-up">
+                            <h4>System/Network Engineer</h4>
+                            <h5 class="text-primary">Suffix IT Ltd.</h5>
+                            <p class="text-muted mb-4">January 2022 - Present</p>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Budgeting, Procurement, Purchasing and Installation of IT Devices</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Configuring and Maintaining of MikroTik and Various Networking Routers</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> DHCP, ARP Control, MAC Binding, VPN Setup, Firewall NAT Configuring on MikroTik Router</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Installing & Maintenance LAN, MAN, WAN Network Topology</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Installing & Maintenance Linux Server with Dependencies</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Ensuring Network & Server Security</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Providing Hardware, Software and Technical Support</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Configuring and Maintaining Astrix Telephony Server</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Configuring and Maintaining Office IP Telephone</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Configuring and Maintaining of DVR/NVR and CCTV Cameras</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Configuring and Maintaining Employees Attendance Machines</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Previous Job 1 -->
+                        <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
+                            <h4>Jr. IT Officer</h4>
+                            <h5 class="text-primary">Daffodil Polytechnic Institute</h5>
+                            <p class="text-muted mb-4">December 2020 - December 2021</p>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Installation, Configuration, and Troubleshooting of Hardware and Software</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Managing Office Network with MikroTik Router</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Setting up Workstations for LAN and WAN Networks</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Configuring and Maintenance of DVR/NVR and CCTV cameras</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Managing Employees Attendance Machines</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Ensuring Network Security and Virus/Malicious Software prevention</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Supporting Computer Lab Setup, Multimedia Projectors, Digital Classrooms, and Sound Systems</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Providing IT and Technical Support for Meetings, Workshops, and Programs</li>
+                            </ul>
+                        </div>
+                        
+                        <!-- Previous Job 2 -->
+                        <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+                            <h4>Technical Support Engineer</h4>
+                            <h5 class="text-primary">EZZY GROUP</h5>
+                            <p class="text-muted mb-4">January 2019 - December 2019</p>
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Installation of NVR, CCTV and AI Motion Cameras</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Configure Cisco and MikroTik routers</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Installation Attendance Machine</li>
+                                <li class="mb-2"><i class="fas fa-check-circle text-primary me-2"></i> Providing Technical Support and Customer service</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section">
+        <div class="container">
+            <h2 class="section-title center" data-aos="fade-up">Technical Skills</h2>
+            <div class="row">
+                <div class="col-md-6" data-aos="fade-right">
+                    <div class="skill-item">
+                        <div class="skill-name">MikroTik & Cisco Router</div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 90%" data-skill-level="90%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-name">Linux System Administration (RHCSA & RHCE)</div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 85%" data-skill-level="85%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-name">Linux Shell Programming</div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 80%" data-skill-level="80%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-name">Cloud Server Management</div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 75%" data-skill-level="75%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-name">Telephony Server Administration</div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 80%" data-skill-level="80%"></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6" data-aos="fade-left">
+                    <div class="skill-item">
+                        <div class="skill-name">Network Management</div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 85%" data-skill-level="85%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-name">Technical Problem Solving</div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 90%" data-skill-level="90%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-name">Hardware & Software Troubleshooting</div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 95%" data-skill-level="95%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-name">Basic Git, Bash & CICD</div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 70%" data-skill-level="70%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="skill-item">
+                        <div class="skill-name">Basic C & Java Programming</div>
+                        <div class="progress">
+                            <div class="progress-bar" role="progressbar" style="width: 65%" data-skill-level="65%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Training Section -->
+            <div class="mt-5" data-aos="fade-up">
+                <h3 class="section-title">Professional Training</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card card-hover mb-3">
+                            <div class="card-body">
+                                <h5><i class="fas fa-certificate text-primary me-2"></i> Linux with RHCSA & RHCE</h5>
+                                <p class="text-muted">CSL Training Center</p>
+                            </div>
+                        </div>
+                        <div class="card card-hover mb-3">
+                            <div class="card-body">
+                                <h5><i class="fas fa-certificate text-primary me-2"></i> SOA Manual & Automated Testing</h5>
+                                <p class="text-muted">Ostad</p>
+                            </div>
+                        </div>
+                        <div class="card card-hover">
+                            <div class="card-body">
+                                <h5><i class="fas fa-certificate text-primary me-2"></i> Troubleshooting in Computer Security</h5>
+                                <p class="text-muted">Muktoopath</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card card-hover mb-3">
+                            <div class="card-body">
+                                <h5><i class="fas fa-certificate text-primary me-2"></i> Troubleshooting in Internet Connection</h5>
+                                <p class="text-muted">Muktoopath</p>
+                            </div>
+                        </div>
+                        <div class="card card-hover mb-3">
+                            <div class="card-body">
+                                <h5><i class="fas fa-certificate text-primary me-2"></i> Troubleshooting in Multimedia Projectors</h5>
+                                <p class="text-muted">Muktoopath</p>
+                            </div>
+                        </div>
+                        <div class="card card-hover">
+                            <div class="card-body">
+                                <h5><i class="fas fa-certificate text-primary me-2"></i> Digital Security Essentials</h5>
+                                <p class="text-muted">Muktoopath</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section bg-light">
+        <div class="container">
+            <h2 class="section-title center" data-aos="fade-up">Education</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="0">
+                    <div class="card card-hover h-100">
+                        <div class="card-body text-center">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-circle d-inline-block mb-3">
+                                <i class="fas fa-graduation-cap text-primary fs-2"></i>
+                            </div>
+                            <h5 class="card-title">BSc in Computer Science & Engineering</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Green University of Bangladesh</h6>
+                            <p class="card-text">Session: 2020-2021</p>
+                            <p class="card-text">Result: 3.11 CGPA</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card card-hover h-100">
+                        <div class="card-body text-center">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-circle d-inline-block mb-3">
+                                <i class="fas fa-certificate text-primary fs-2"></i>
+                            </div>
+                            <h5 class="card-title">Diploma in Computer Engineering</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Daffodil Polytechnic Institute</h6>
+                            <p class="card-text">Session: 2015-2016</p>
+                            <p class="card-text">Result: 2.70 CGPA</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="card card-hover h-100">
+                        <div class="card-body text-center">
+                            <div class="bg-primary bg-opacity-10 p-3 rounded-circle d-inline-block mb-3">
+                                <i class="fas fa-school text-primary fs-2"></i>
+                            </div>
+                            <h5 class="card-title">Secondary School Certificate</h5>
+                            <h6 class="card-subtitle mb-2 text-muted">Bangladesh Railway Govt. High School</h6>
+                            <p class="card-text">Session: 2012-2013</p>
+                            <p class="card-text">Result: 3.83 GPA (Science Group)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section">
+        <div class="container">
+            <h2 class="section-title center" data-aos="fade-up">Contact Me</h2>
+            <div class="row">
+                <div class="col-lg-5 mb-4" data-aos="fade-right">
+                    <div class="card card-hover">
+                        <div class="card-body">
+                            <h5 class="card-title">Get in Touch</h5>
+                            <div class="contact-info mb-3">
+                                <p><i class="fas fa-phone me-2 text-primary"></i> +88 01748730955</p>
+                                <p><i class="fas fa-envelope me-2 text-primary"></i> hbsabbir9@gmail.com</p>
+                                <p><i class="fas fa-map-marker-alt me-2 text-primary"></i> Uttar Badda, Link Road, Dhaka, Bangladesh</p>
+                            </div>
+                            <h5 class="card-title">References</h5>
+                            <div class="mb-3">
+                                <div class="d-flex align-items-start mb-3">
+                                    <div class="flex-shrink-0 bg-primary bg-opacity-10 p-2 rounded me-3">
+                                        <i class="fas fa-user-tie text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1">Abu Saleh Nayem</h6>
+                                        <p class="mb-1 small">Sr. System Engineer, EZZY AUTOMATION</p>
+                                        <p class="mb-1 small">Cell: 01766-144288</p>
+                                        <p class="small">Email: sysadmin@ezzygroup.org</p>
+                                    </div>
+                                </div>
+                                <div class="d-flex align-items-start">
+                                    <div class="flex-shrink-0 bg-primary bg-opacity-10 p-2 rounded me-3">
+                                        <i class="fas fa-user-tie text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h6 class="mb-1">MD. Zillur Rahman</h6>
+                                        <p class="mb-1 small">Deputy Manager (IT), Daffodil International Academy</p>
+                                        <p class="mb-1 small">Cell: 01713-493263</p>
+                                        <p class="small">Email: zillur@daffodil.ac</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-7" data-aos="fade-left">
+                    <form id="contactForm">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="name" class="form-label">Your Name</label>
+                                <input type="text" class="form-control" id="name" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="email" class="form-label">Your Email</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" class="form-control" id="subject" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea class="form-control" id="message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-custom">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center">
+        <div class="container">
+            <div class="social-icons mb-3">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.linkedin.com/in/sabbir-hossain-68b315215" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+            </div>
+            <p class="mb-2">&copy; 2023 MD. Sabbir Hossain. All Rights Reserved.</p>
+            <p class="small">Designed with <i class="fas fa-heart text-danger"></i> by Sabbir Hossain</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Particle JS -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <!-- AOS (Animate On Scroll) -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JS -->
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+        
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+            
+            // Back to top button
+            const backToTop = document.querySelector('.back-to-top');
+            if (window.scrollY > 300) {
+                backToTop.classList.add('active');
+            } else {
+                backToTop.classList.remove('active');
+            }
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+                
+                // Close mobile menu when clicking a link
+                const navbarCollapse = document.querySelector('.navbar-collapse');
+                if (navbarCollapse.classList.contains('show')) {
+                    const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+                    bsCollapse.hide();
+                }
+            });
+        });
+        
+        // Initialize Particle.js
+        document.addEventListener('DOMContentLoaded', function() {
+            if (document.getElementById('particles-js')) {
+                particlesJS('particles-js', {
+                    "particles": {
+                        "number": {
+                            "value": 80,
+                            "density": {
+                                "enable": true,
+                                "value_area": 800
+                            }
+                        },
+                        "color": {
+                            "value": "#ffffff"
+                        },
+                        "shape": {
+                            "type": "circle",
+                            "stroke": {
+                                "width": 0,
+                                "color": "#000000"
+                            },
+                            "polygon": {
+                                "nb_sides": 5
+                            }
+                        },
+                        "opacity": {
+                            "value": 0.5,
+                            "random": false,
+                            "anim": {
+                                "enable": false,
+                                "speed": 1,
+                                "opacity_min": 0.1,
+                                "sync": false
+                            }
+                        },
+                        "size": {
+                            "value": 3,
+                            "random": true,
+                            "anim": {
+                                "enable": false,
+                                "speed": 40,
+                                "size_min": 0.1,
+                                "sync": false
+                            }
+                        },
+                        "line_linked": {
+                            "enable": true,
+                            "distance": 150,
+                            "color": "#ffffff",
+                            "opacity": 0.4,
+                            "width": 1
+                        },
+                        "move": {
+                            "enable": true,
+                            "speed": 2,
+                            "direction": "none",
+                            "random": false,
+                            "straight": false,
+                            "out_mode": "out",
+                            "bounce": false,
+                            "attract": {
+                                "enable": false,
+                                "rotateX": 600,
+                                "rotateY": 1200
+                            }
+                        }
+                    },
+                    "interactivity": {
+                        "detect_on": "canvas",
+                        "events": {
+                            "onhover": {
+                                "enable": true,
+                                "mode": "grab"
+                            },
+                            "onclick": {
+                                "enable": true,
+                                "mode": "push"
+                            },
+                            "resize": true
+                        },
+                        "modes": {
+                            "grab": {
+                                "distance": 140,
+                                "line_linked": {
+                                    "opacity": 1
+                                }
+                            },
+                            "bubble": {
+                                "distance": 400,
+                                "size": 40,
+                                "duration": 2,
+                                "opacity": 8,
+                                "speed": 3
+                            },
+                            "repulse": {
+                                "distance": 200,
+                                "duration": 0.4
+                            },
+                            "push": {
+                                "particles_nb": 4
+                            },
+                            "remove": {
+                                "particles_nb": 2
+                            }
+                        }
+                    },
+                    "retina_detect": true
+                });
+            }
+        });
+        
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would typically send the form data to a server
+            // For demo purposes, we'll just show an alert
+            alert(`Thank you, ${name}! Your message has been sent. I'll get back to you soon.`);
+            
+            // Reset form
+            this.reset();
+        });
+        
+        // Animate progress bars when they come into view
+        const animateProgressBars = () => {
+            const progressBars = document.querySelectorAll('.progress-bar');
+            
+            progressBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0';
+                
+                const observer = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            bar.style.width = width;
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                });
+                
+                observer.observe(bar.parentElement);
+            });
+        };
+        
+        // Run the animation function
+        animateProgressBars();
+    </script>
+</body>
+</html>
